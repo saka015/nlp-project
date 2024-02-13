@@ -1,65 +1,61 @@
 import Featured from "./Featured";
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+
 import { IoIosShareAlt } from "react-icons/io";
 import { FaCopy } from "react-icons/fa";
+import { useState } from "react";
 
 const Main = () => {
+
+    const [hidden, setHidden] = useState(true)
+
+    const hide = () => {
+        setHidden(!hidden);
+    }
   return (
-    <div className="flex text-center p-2 bg-[#535C91] min-h-[50vh] mt-8 mx-6 rounded-sm">
-      <div className="w-[20%] bg-[#474F7A">
-        <h1 className="text-black font-bold rounded-sm border py-1 bg-white  border-white">
-          Recent Searches
-        </h1>
-        <button className="hover:text-[#1B1A55] font-semibold rounded-sm border py-1 bg-[#1B1A55] text-white hover:bg-gray-200 border-white w-full my-2">
-          New Chat
-        </button>
-        <div className="h-[58vh] my-2 px-2 overflow-scroll overflow-x-hidden">
-          <p className="h-8 cursor-pointer overflow-y-hidden hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
-          <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, praesentium.
-          </p>
+    <div className="flex text-center p- bg-[#535C91] min-h-[50vh] mt-8 mx-6 rounded-sm overflow-hidden">
+      <div
+        className={`py-2 pl-1 w-[20%] bg-[#474F7A] flex transform transition-transform duration-500    ${
+          hidden ? "" : "-translate-x-[246px]"
+        }`}
+      >
+        <div className="">
+          <h1 className="text-black font-bold rounded-sm border py-1 bg-white  border-white">
+            Recent Searches
+          </h1>
+          <button className="hover:text-[#1B1A55] font-semibold rounded-sm border py-1 bg-[#1B1A55] text-white hover:bg-gray-200 border-white w-full my-2">
+            New Chat
+          </button>
+          <div className="h-[58vh] my-2 px-2 overflow-scroll overflow-x-hidden">
+            <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, praesentium.
+            </p>
+            <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, praesentium.
+            </p>
+            <p className="h-8 cursor-pointer overflow-y-hidden  hover:bg-[#1B1A55] hover:text-[#9290C3] active:scale-95 transition-all text-black font-semibold rounded-sm border py-1 bg-[#9290C3]  border-white w-full my-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, praesentium.
+            </p>
+          </div>
+        </div>
+        <div className="grid place-items-center">
+          {hidden ? (
+            <IoIosArrowDropleft
+              onClick={hide}
+              className="text-lg text-white cursor-pointer hover:text-gray-400"
+            />
+          ) : (
+            <IoIosArrowDropright
+              onClick={hide}
+              className="text-lg text-white cursor-pointer hover:text-gray-400"
+            />
+          )}
         </div>
       </div>
-      <div className="w-[80%] px-4 ]">
+      <div className="w-[80%] px-4 p-2 ]">
         <input
           className="w-full h-12 rounded-sm text-xl px-3 text-black "
           type="text"
@@ -102,3 +98,6 @@ const Main = () => {
 };
 
 export default Main;
+
+/*<div className="w-[90%]">
+ */
